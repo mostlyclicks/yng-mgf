@@ -9,6 +9,126 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
+    
+    <div class="form-group">
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :legal_name %>
+      <%= f.text_field :legal_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :dba %>
+      <%= f.text_field :dba, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :billing_address_line_1 %>
+      <%= f.text_field :billing_address_line_1, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :billing_address_line_2 %>
+      <%= f.text_field :billing_address_line_2, class: 'form-control' %>
+    </div>    
+
+    <div class="form-group">
+      <%= f.label :billing_city %>
+      <%= f.text_field :billing_city, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :billing_state %>
+      <%= f.text_field :billing_state, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :billing_zip %>
+      <%= f.text_field :billing_zip, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :billing_phone_number %>
+      <%= f.text_field :billing_phone_number, class: 'form-control' %>
+    </div>
+
+    <fieldset id="financial-info">
+      <h2>Financial Information</h2>
+      <% @org_types = ['LLC', 'LLP', 'Sub S', 'Partnership', 'Sole Proprietorship'] %>
+      <div class="form-group">
+        <%= f.label :type_of_organization %>
+        <%= f.select(:type_of_organization, @org_types.collect{ |too| [too] }) %>
+      </div>
+      <div class="form-group">
+        <%= f.label :bank_name %>
+        <%= f.text_field :bank_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :bank_account_number %>
+        <%= f.text_field :bank_account_number %>
+      </div>
+      <div class="form-group">
+        <%= f.label :bank_routing_number %>
+        <%= f.text_field :bank_routing_number %>
+      </div>
+      <div class="form-group">
+        <%= f.label :tax_id %>
+        <%= f.text_field :tax_id %>
+      </div>
+    </fieldset>
+
+    <fieldset id="contact-info">
+      <h2>Contact Information</h2>
+      <div class="field form-group">
+        <%= f.label :info_website, class: 'control-label' %>
+        <%= f.text_field :info_website, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :info_company_description, class: 'control-label' %>
+        <%= f.text_area :info_company_description, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :info_hours, class: 'control-label' %>
+        <%= f.text_area :info_hours, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :info_customer_service_phone, class: 'control-label' %>
+        <%= f.text_field :info_customer_service_phone, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :info_accounts_payable_person, class: 'control-label' %>
+        <%= f.text_field :info_accounts_payable_person, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :info_marketing_manager, class: 'control-label' %>
+        <%= f.text_field :info_marketing_manager, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :owner_direct_name, class: 'control-label' %>
+        <%= f.text_field :owner_direct_name, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :owner_direct_email, class: 'control-label' %>
+        <%= f.text_field :owner_direct_email, class: 'form-control'  %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :owner_direct_phone, class: 'control-label' %>
+        <%= f.text_field :owner_direct_phone, class: 'form-control'  %>
+      </div>
+
+    </fieldset>
+
     <fieldset>
       <p>Leave these fields blank if you don't want to change your password.</p>
       <div class="form-group">

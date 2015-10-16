@@ -11,26 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016012105) do
+ActiveRecord::Schema.define(version: 20151016014751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                        default: "", null: false
+    t.string   "encrypted_password",           default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "name"
     t.integer  "role"
+    t.string   "company_name"
+    t.string   "legal_name"
+    t.string   "dba"
+    t.string   "billing_address_line_1"
+    t.string   "billing_address_line_2"
+    t.string   "billing_city"
+    t.string   "billing_state"
+    t.string   "billing_zip"
+    t.string   "billing_phone_number"
+    t.string   "type_of_organization"
+    t.string   "bank_name"
+    t.string   "bank_account_number"
+    t.string   "bank_routing_number"
+    t.string   "tax_id"
+    t.string   "info_website"
+    t.text     "info_company_description"
+    t.text     "info_hours"
+    t.string   "info_customer_service_phone"
+    t.string   "info_accounts_payable_person"
+    t.string   "info_marketing_manager"
+    t.string   "owner_direct_name"
+    t.string   "owner_direct_email"
+    t.string   "owner_direct_phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
