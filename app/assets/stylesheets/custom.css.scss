@@ -8,13 +8,33 @@ main {
 
 p {margin:1em 0;}
 
-h1 {
+h1, h2, h3 {
   font-family:Helvetica Neue, Helvetica, arial, sans-serif;
   font-weight:200;
   color:rgba(0,0,0,.6);
 }
 
+fieldset {
+  padding-bottom:40px;
+
+
+
+
+}
+
+  #cancel-account {
+    background-color:#efefef;
+    border-radius:10px;
+    padding:5px 20px 20px 20px;
+    margin-top:20px;
+  }
+
+  
+
+
+
 #home-buttons {
   p {margin:2em 0 .7em 0;}
   margin-top:50px;
 }
+

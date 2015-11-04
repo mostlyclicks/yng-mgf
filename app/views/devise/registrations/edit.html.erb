@@ -1,7 +1,13 @@
-<div class="authform">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
+<div class="authform2 container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+  <h1>Your Account</h1>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
+
+    <fieldset id="general-info">
+      <h2>General Information</h2>
     <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
@@ -54,31 +60,7 @@
       <%= f.label :billing_phone_number %>
       <%= f.text_field :billing_phone_number, class: 'form-control' %>
     </div>
-
-    <fieldset id="financial-info">
-      <h2>Financial Information</h2>
-      <% @org_types = ['LLC', 'LLP', 'Sub S', 'Partnership', 'Sole Proprietorship'] %>
-      <div class="form-group">
-        <%= f.label :type_of_organization %>
-        <%= f.select(:type_of_organization, @org_types.collect{ |too| [too] }) %>
-      </div>
-      <div class="form-group">
-        <%= f.label :bank_name %>
-        <%= f.text_field :bank_name, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :bank_account_number %>
-        <%= f.text_field :bank_account_number %>
-      </div>
-      <div class="form-group">
-        <%= f.label :bank_routing_number %>
-        <%= f.text_field :bank_routing_number %>
-      </div>
-      <div class="form-group">
-        <%= f.label :tax_id %>
-        <%= f.text_field :tax_id %>
-      </div>
-    </fieldset>
+  </fieldset>
 
     <fieldset id="contact-info">
       <h2>Contact Information</h2>
@@ -147,11 +129,18 @@
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
     </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
+    <%= f.submit 'Update', :class => 'btn btn-lg btn-success' %>
   <% end %>
+  <fieldset id="cancel-account">
+      <div class="authform2">
+    <h3>Cancel Account</h3>
+    <p>Unhappy? We'll be sad to see you go.</p>
+    <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-warning' %>
+    </div>
+  </fieldset>
+
 </div>
-<div class="authform">
-<h3>Cancel Account</h3>
-<p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
-</div>
+
+
+    </div>
+  </div>
