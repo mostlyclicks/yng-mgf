@@ -1,2 +1,91 @@
-<h3>User</h3>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @user.company_name %></h1>
+      <small>Created: <%= @user.created_at.strftime('%B, %d, %Y') %> by <%= @user.owner_direct_name %></small>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <table class="table user-info">
+          <col width="35%">
+          <col width="65%">
+          <tr>
+            <td><strong>Legal name:</strong></td>
+            <td><%= @user.legal_name %></td>
+          </tr>
+          <tr>
+            <td><strong>DBA:</strong></td>
+            <td><%= @user.dba %></td>
+          </tr>
+          <tr>
+            <td><strong>Billing Address:</strong></td>
+            <td><%= @user.billing_address_line_1 %></td>
+          </tr>
+          <% if @user.billing_address_line_2.present? %>
+            <tr>
+              <td><strong>Billing Address 2:</strong></td>
+              <td><%= @user.billing_address_line_2 %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td><strong>Billing City:</strong></td>
+            <td><%= @user.billing_city %></td>
+          </tr>
+          <tr>
+            <td><strong>Billing State:</strong></td>
+            <td><%= @user.billing_state %></td>
+          </tr>
+          <tr>
+            <td><strong>Billing Zip:</strong></td>
+            <td><%= @user.billing_zip %></td>
+          </tr>
+          <tr>
+            <td><strong>Phone Number:</strong></td>
+            <td><%= @user.billing_phone_number %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-md-8">
+        <table class="table user-info">
+          <col width="25%">
+          <col width="75%">
+          <tr>
+            <td><strong>Website:</strong></td>
+            <td><%= @user.info_website %></td>
+          </tr>
+          <tr>
+            <td><strong>Company Description:</strong></td>
+            <td><%= @user.info_company_description %></td>
+          </tr>
+          <tr>
+            <td><strong>Company Hours:</strong></td>
+            <td><%= @user.info_hours %></td>
+          </tr>
+          <tr>
+            <td><strong>Customer Service Phone:</strong></td>
+            <td><%= @user.info_customer_service_phone %></td>
+          </tr>
+          <tr>
+            <td><strong>Accounts Payable Contact:</strong></td>
+            <td><%= @user.info_accounts_payable_person %></td>
+          </tr>
+          <tr>
+            <td><strong>Marketing Contact:</strong></td>
+            <td><%= @user.info_marketing_manager %></td>
+          </tr>
+          <tr>
+            <td><strong>Owner Info</strong></td>
+            <td>
+              <%= @user.owner_direct_name %><br />
+              <%= @user.owner_direct_email %><br />
+              <%= @user.owner_direct_phone %>
+            </td>
+          </tr>
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
