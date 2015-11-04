@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   after_action :verify_authorized
 
   def index
+
     @users = User.all
     authorize User
   end
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @hello = "hello"
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
