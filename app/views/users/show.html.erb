@@ -1,8 +1,12 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
+
     <div class="col-md-12">
       <h1><%= @user.company_name %></h1>
       <small>Created: <%= @user.created_at.strftime('%B, %d, %Y') %> by <%= @user.owner_direct_name %></small>
+    </div>
+    <div class="col-md-12">
+      <h3 style="color:red;"><%= complete_info(@user) %></h3>
     </div>
     <div class="row">
       <div class="col-md-4">

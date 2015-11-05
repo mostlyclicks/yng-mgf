@@ -36,3 +36,10 @@ fieldset {
   margin-top:50px;
 }
 
+.navbar {
+  border-bottom:1px solid #f7f7f7;
+  background-color:lighten(#f9f9f9,1%);
+  box-shadow:0 0 2px 1px #f1f1f1;
+  li {text-transform:uppercase;}
+}
+
