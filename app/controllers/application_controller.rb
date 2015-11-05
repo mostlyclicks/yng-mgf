@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
     # devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:password, :email)}
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:company_name, :email, :password, :password_confirmation, :current_password, :legal_name,
       :dba, :billing_address_line_1, :billing_address_line_2, :billing_city, :billing_state, :billing_zip, :billing_phone_number, :info_website, :info_company_description, :info_hours, :info_customer_service_phone,
-      :info_accounts_payable_person, :info_marketing_manager, :owner_direct_name, :owner_direct_email, :owner_direct_phone)}
+      :info_accounts_payable_person, :info_marketing_manager, :owner_direct_name, :owner_direct_email, :owner_direct_phone, :dropbox_info)}
   end
 
 end

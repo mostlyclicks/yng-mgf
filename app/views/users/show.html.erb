@@ -55,6 +55,10 @@
           <col width="25%">
           <col width="75%">
           <tr>
+            <td><strong>DropBox URL:</strong></td>
+            <td><%= link_to @user.dropbox_info, @user.dropbox_info, target: '_blank' %></td>
+          </tr>
+          <tr>
             <td><strong>Website:</strong></td>
             <td><%= @user.info_website %></td>
           </tr>
